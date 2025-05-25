@@ -1,9 +1,9 @@
 package com.ultra.rmq.controller;
 
 
-import com.ultra.template.dto.LoginResponse;
-import com.ultra.template.dto.LoginUserDto;
-import com.ultra.template.dto.RegisterUserDto;
+import com.ultra.rmq.dto.LoginResponse;
+import com.ultra.rmq.dto.LoginUserDto;
+import com.ultra.rmq.dto.RegisterUserDto;
 import com.ultra.rmq.entity.User;
 import com.ultra.rmq.service.AuthenticationService;
 import com.ultra.rmq.service.JwtService;

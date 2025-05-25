@@ -1,4 +1,4 @@
-package com.ultra.template.enums;
+package com.ultra.rmq.enums;
 
 public enum Roles {
     ROLE_USER("ROLE_USER"),

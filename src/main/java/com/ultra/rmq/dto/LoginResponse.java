@@ -1,4 +1,4 @@
-package com.ultra.template.dto;
+package com.ultra.rmq.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

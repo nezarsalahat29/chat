@@ -1,11 +1,11 @@
 package com.ultra.rmq.service;
 
 
-import com.ultra.template.dto.LoginUserDto;
-import com.ultra.template.dto.RegisterUserDto;
+import com.ultra.rmq.dto.LoginUserDto;
+import com.ultra.rmq.dto.RegisterUserDto;
 import com.ultra.rmq.entity.Role;
 import com.ultra.rmq.entity.User;
-import com.ultra.template.enums.Roles;
+import com.ultra.rmq.enums.Roles;
 import com.ultra.rmq.repository.RoleRepository;
 import com.ultra.rmq.repository.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
