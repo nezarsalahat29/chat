@@ -7,7 +7,9 @@ import lombok.Data;
 
 @Data
 public class RegisterUserDto {
-    @NotBlank(message = "Please provide a email")
+    @NotBlank(message = "Please provide a username")
+    private String username;
+    @NotBlank(message = "Please provide an email")
     private String email;
     @NotBlank(message = "Please provide a password")
     @Size(min = 4, max = 15)

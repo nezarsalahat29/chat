@@ -42,6 +42,9 @@ public class AuthenticationService {
         userRepository.findByEmail(input.getEmail()).ifPresent(user -> {
             throw new IllegalArgumentException("User with email already exists");
         });
+        userRepository.findByUsername(input.getUsername()).ifPresent(user -> {
+            throw new IllegalArgumentException("User with username already exists");
+        });
         String role = input.isUserAdmin() ? Roles.ROLE_ADMIN.getRole() : Roles.ROLE_USER.getRole();
         Role userRole = roleRepository.findByAuthority(role).orElseGet(
                 () -> roleRepository.save(new Role(role))
@@ -49,6 +52,7 @@ public class AuthenticationService {
         Set<Role> authorities = new HashSet<>();
         authorities.add(userRole);
         User user = new User();
+        user.setUsername(input.getUsername());
         user.setFullName(input.getFullName());
         user.setEmail(input.getEmail());
         user.setPassword(passwordEncoder.encode(input.getPassword()));
@@ -57,14 +61,14 @@ public class AuthenticationService {
     }
 
     public User authenticate(LoginUserDto input) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        input.getEmail(),
-                        input.getPassword()
-                )
-        );
+//        authenticationManager.authenticate(
+//                new UsernamePasswordAuthenticationToken(
+//                        input.getUsername(),
+//                        input.getPassword()
+//                )
+//        );
 
-        return userRepository.findByEmail(input.getEmail())
+        return userRepository.findByUsername(input.getUsername())
                 .orElseThrow();
     }
 }
